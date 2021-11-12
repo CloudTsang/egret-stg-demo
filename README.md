@@ -225,4 +225,6 @@ if(this._playerPosition){
 }			
 ```
 
+~~这个demo唯一的优点就是BGM了吧，不愧是名曲，还能剪成4段来用~~
+
 
