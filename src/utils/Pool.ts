@@ -10,23 +10,19 @@ class Pool<T extends IPoolObject> {
 		let ret:T = null;
 		for(let obj of this._arr){
 			if(!obj.activate){
-				// console.log("old object");
 				ret = obj;
 				break;
 			}
 		}
 		if(!ret){
-			// console.log("new object");
 			ret = this._func();
 			this._arr.push(ret);
 		}
 		ret.activate = true;
-		// ret.addEventListener(PlayEvents.RECYCLEABLE, this.recycle, this)
 		return ret;
 	}
 
 	private recycle(e:egret.Event=null){
-		// console.log("recycle");
 		let obj:T = e.target;
 		obj.activate = false;
 	}

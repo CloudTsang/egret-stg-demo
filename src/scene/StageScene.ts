@@ -35,18 +35,6 @@ class StageScene extends egret.Sprite{
         bmp.height = this.height;
         this.addChild(bmp)
         this._bg = bmp;
-        // this.graphics.beginFill(0x87CEEB)
-        // this.graphics.drawRect(0,0,this.width, this.height);
-        // this.graphics.endFill()       
-
-        // this._txtTip = new egret.TextField();
-        // this._txtTip.size = 40
-        // this._txtTip.textColor = 0x000000
-        // this._txtTip.x = 0;
-        // this._txtTip.y = this._stage.stageHeight - 40;
-        
-        // this.addChild(this._txtTip);
-        // this._txtTip.text = "combat!";       
     }
 
     public startPlay(){
@@ -252,9 +240,7 @@ class StageScene extends egret.Sprite{
                     }                         
                 }
             }  
-        }        
-        
-        
+        }            
 
         //拾取漂流物判断   
         if(this._drift && this._drift.buff){   
