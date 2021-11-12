@@ -1,6 +1,6 @@
 # egret-stg-demo
  
-练习做的白鹭引擎小型飞机设计游戏
+练习做的白鹭引擎小型飞机射击游戏
 
 运行 `egret start server -a`
 
