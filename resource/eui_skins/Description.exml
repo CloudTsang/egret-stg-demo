@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Description" width="600" height="800" xmlns:e="http://ns.egret.com/eui">
+	<e:Group id="decript_group" width="600" height="800" x="0" y="0">
+        <e:Rect width="600" height="800" x="0" y="0" fillAlpha="0.4"/>
+        <e:Label text="十字键：移动\nZ：射击\nX：喷射" x="141.252" y="84.502" size="50"/>
+		<e:Group width="348.321" height="150.125" x="45" y="559.3">
+			<e:Image width="80" height="80" x="216.3" y="5.663" source="drift_png"/>
+			<e:Label text="射击击破        漂流物，\n会变成强化道具，\n拾取后获得各种效果。" x="-1" y="40.063" size="50"/>
+		</e:Group>
+        <e:Group width="342.509" height="137.058" x="22.812" y="204.039">
+            <e:Image width="80" height="80" x="312.831" y="122.69" source="jet_png" scaleX="1" scaleY="1"/>
+            <e:Label text="喷射消耗一格       喷射槽，随时间经过回复。" x="13.085" y="157.336" width="528.503" height="206.584" scaleX="1" scaleY="1" size="50"/>
+        </e:Group>
+    </e:Group>
+</e:Skin>
