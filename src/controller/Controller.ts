@@ -1,5 +1,5 @@
 class Controller {
-	private static ins:Controller;
+	private static ins:Controller;	
 	public static getInstance():Controller{
 		if(!Controller.ins){
 			Controller.ins = new Controller();
@@ -11,9 +11,14 @@ class Controller {
 	private _shotTriggered:boolean = false;
 	private _directX:number = 0;
 	private _directY:number = 0;
+	private _panel:ControlPanel;
 	public constructor() {		
 		document.addEventListener('keydown', (e)=>{this.onKeyDown(e)});
 		document.addEventListener('keyup', (e)=>{this.onKeyUp(e)})		
+	}	
+
+	public setPanel(cp:ControlPanel){
+		this._panel = cp;
 	}
 
 	public setControllee(p:BasePlane){
@@ -91,6 +96,11 @@ class Controller {
 				}
 				break;
 		}
+	}
+
+	public setDirect(x:-1|0|1, y:-1|0|1){
+		this._directX = x;
+		this._directY = y;
 	}
 
 	

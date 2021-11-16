@@ -5,6 +5,7 @@ class StageScene extends egret.Sprite{
     private _dashGauge:DashGauge;
     private _drift:Drift;
     private _playerController:Controller;
+    private _controlPanel:ControlPanel;
     private _stage = egret.MainContext.instance.stage;
 
     private _txtTip:egret.TextField;
@@ -47,7 +48,7 @@ class StageScene extends egret.Sprite{
         this._gameResult && this._gameResult.dispose();
 
         this.initPlayer();
-        this.createEnemy();
+        // this.createEnemy();
         this.initUI();
         this.createDrift();
         this.addEventListener(egret.Event.ENTER_FRAME, this.refreshStage, this);
@@ -71,6 +72,9 @@ class StageScene extends egret.Sprite{
             this._driftTimer = null;            
             this._drift && this._drift.dispose();
             this._drift = null        
+
+            this.removeChild(this._dashGauge)
+            this.removeChild(this._controlPanel);
 
             for(let b of Bullet.allArr){
                 b.disposeImmediately()
@@ -132,10 +136,15 @@ class StageScene extends egret.Sprite{
         // enemy.shot()   
     }
 
-    private initUI(){        
+    private initUI(){                        
+        let cp = new ControlPanel(this._stage);
+        cp.y = this._stage.stageHeight - cp.height;
+        this.addChild(cp);
+        this._controlPanel = cp;
+
         let dg = new DashGauge();
         dg.setDashTime(3);
-        dg.x = this._stage.stageWidth;
+        dg.x = this._stage.stageWidth-200;
         dg.y = this._stage.stageHeight - dg.height;
         this._dashGauge = dg            
         this.addChild(this._dashGauge)              

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.ControlPanel"
+	 width="800"
+	height="400" xmlns:e="http://ns.egret.com/eui">
+	<e:Button id="btn_jet" label="Button" x="601" y="-26" skinName="skins.BtnJet"/>
+	<e:Button id="btn_shot" label="Button" x="601" y="203" skinName="skins.BtnBullet"/>
+	<e:Rect id="analog" width="400" height="400" x="200" y="200" fillAlpha="0" anchorOffsetX="200" anchorOffsetY="200"/>
+	<e:Rect width="200" height="200" x="200" y="200" fillAlpha="0" ellipseWidth="200" ellipseHeight="200" strokeWeight="8" strokeColor="0x2B2828" anchorOffsetX="100" anchorOffsetY="100"/>
+</e:Skin>
