@@ -99,12 +99,13 @@ class Main extends eui.UILayer {
      * 创建场景界面
      * Create scene interface
      */
-    protected createGameScene(): void {             
+    protected createGameScene(): void {         
+        console.log(egret.Capabilities.os)    ;
+        // let dispScene = new DisplayScene(this.stage);
+        // this.stage.addChild(dispScene)
+        LifecycleCallback.regist()
+        this.toTitle()    
 
-
-    // let dispScene = new DisplayScene(this.stage);
-    // this.stage.addChild(dispScene)
-        this.toTitle()        
     }
 
     private toTitle(e:any=null){        

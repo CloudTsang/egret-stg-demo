@@ -12,6 +12,7 @@
 ![title](https://raw.githubusercontent.com/CloudTsang/egret-stg-demo/main/p2.jpg)
 
 
+
 主舞台StageScene侦听ENTER_FRAME事件刷新飞机子弹的位置并进行各种判断
 
 ```
@@ -224,6 +225,39 @@ if(this._playerPosition){
     }
 }			
 ```
+
+应用前后台切换的暂停/重开处理，而部分功能使用了timer，使用stop、start会导致timer重新计时，代码只是降低了timer.delay以减轻影响。
+```
+class LifecycleCallback{
+    private static map:{[key:string]:LcyObj}= {};
+
+    public static regist(){
+        egret.lifecycle.onPause = this.onPause;
+        egret.lifecycle.onResume = this.onResume;
+    } 
+
+    public static addFunc(key:string, f1:()=>any, f2:()=>any){
+        LifecycleCallback.map[key] = new LcyObj(f1,f2);
+    }
+
+    public static removeFunc(key:string, f1:()=>any, f2:()=>any){
+        delete LifecycleCallback.map[key]
+    }
+
+    private static onPause(){
+        for(let i in LifecycleCallback.map){
+            LifecycleCallback.map[i].onPause();
+        }
+    }
+
+    private static onResume(){
+        for(let i in LifecycleCallback.map){
+            LifecycleCallback.map[i].onResume();
+        }
+    }
+}
+```
+
 
 ~~这个demo唯一的优点就是BGM了吧，不愧是名曲，还能剪成4段来用~~
 

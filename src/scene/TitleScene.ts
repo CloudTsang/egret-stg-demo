@@ -17,9 +17,14 @@ class TitleScene  extends egret.Sprite
 		bmp.width = this.width;
 		bmp.height = this.height;
 		this.addChild(bmp)
-
+		
 		this._descript = new eui.Component();
-		this._descript.skinName = 'resource/eui_skins/Description.exml'
+		if(egret.Capabilities.os.indexOf('Windows') >= 0){
+			this._descript.skinName = 'resource/eui_skins/Description.exml'
+		}else{
+			this._descript.skinName = 'resource/eui_skins/Description.1.exml'
+		}
+		
 		this._descript.x = (this._stage.stageWidth - this._descript.width)/2;
 		this._descript.y = 200;
 		this.addChild(this._descript);

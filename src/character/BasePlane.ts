@@ -38,6 +38,18 @@ class BasePlane extends BaseCharacter{
         this.shotTimer = new egret.Timer(this.shotSpeed, 1);
 	}
 
+    public onPause(){
+        this.dashGaugeTimer.stop();
+        this.shotTimer.stop();
+        this.buffManager.onPause();
+    }
+
+    public onResume(){
+        this.dashGaugeTimer.start();
+        this.shotTimer.start();
+        this.buffManager.onResume();
+    }
+
 	protected draw(){
         this.graphics.beginFill(this.pColor)
         this.graphics.moveTo(-this.pWidth, this.pHeight);
@@ -73,6 +85,9 @@ class BasePlane extends BaseCharacter{
             return;
         }
         if(this.curDashGauge == 0){
+            return;
+        }
+        if(dx == 0 && dy == 0){
             return;
         }
         if(!this.dashGaugeTimer.running){

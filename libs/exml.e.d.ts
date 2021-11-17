@@ -1,10 +1,24 @@
 declare module skins{
+	class BtnBullet extends eui.Skin{
+	}
+}
+declare module skins{
+	class BtnJet extends eui.Skin{
+	}
+}
+declare module skins{
 	class ButtonSkin extends eui.Skin{
 	}
 }
 declare module skins{
 	class CheckBoxSkin extends eui.Skin{
 	}
+}
+declare module skins{
+	class ControlPanel extends eui.Skin{
+	}
+}
+declare class DescriptionMobile extends eui.Skin{
 }
 declare class Description extends eui.Skin{
 }

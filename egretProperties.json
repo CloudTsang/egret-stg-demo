@@ -23,11 +23,24 @@
     },
     {
       "name": "promise"
+    },
+    {
+      "name": "particle",
+      "path": "../libsrc/particle"
     }
   ],
   "eui": {
     "exmlRoot": [
       "resource/eui_skins"
     ]
+  },
+  "vivo": {
+    "usePlugin": true
+  },
+  "targets": {
+    "android": {
+      "appname": "杂牌空战",
+      "packagename": "com.cloudsoft.teststg"
+    }
   }
 }

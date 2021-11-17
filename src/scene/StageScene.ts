@@ -36,6 +36,8 @@ class StageScene extends egret.Sprite{
         bmp.height = this.height;
         this.addChild(bmp)
         this._bg = bmp;
+        LifecycleCallback.addFunc('StageScene', ()=>{this.onPause()}, ()=>{this.onResume()})
+
     }
 
     public startPlay(){
@@ -48,7 +50,7 @@ class StageScene extends egret.Sprite{
         this._gameResult && this._gameResult.dispose();
 
         this.initPlayer();
-        // this.createEnemy();
+        this.createEnemy();
         this.initUI();
         this.createDrift();
         this.addEventListener(egret.Event.ENTER_FRAME, this.refreshStage, this);
@@ -74,15 +76,14 @@ class StageScene extends egret.Sprite{
             this._drift = null        
 
             this.removeChild(this._dashGauge)
-            this.removeChild(this._controlPanel);
+            if(this._controlPanel)this.removeChild(this._controlPanel);
 
             for(let b of Bullet.allArr){
                 b.disposeImmediately()
             }   
             for(let b of EnemyBullet.allArr){
                 b.disposeImmediately()
-            }                 
-                        
+            }                                         
         }catch(e){
             console.log(e);
         }
@@ -98,10 +99,10 @@ class StageScene extends egret.Sprite{
 
         player.x = this.stage.width/2 - player.width;
         player.y = this.stage.height + player.height;                
-        // player.setBuff(BuffType.INVINSIBLE, 3000)
+        player.setBuff(BuffType.INVINSIBLE, 3000)
         // player.setBuff(BuffType.BULLET_BOOST_BIG, -1);
         // player.setBuff(BuffType.BULLET_BOOST_5DIRECT, -1);
-        // setTimeout(()=>{player.setBuff(BuffType.SUB_PLANE, -1)}, 3000);        
+        // setTimeout(()=>{player.setBuff(BuffType.SUB_PLANE, 5000)}, 3000);        
         egret.Tween.get(player).to({y:this.stage.height - player.height - 80}, 1000).call(ctrller.setLock, ctrller, [false])    
         player.addEventListener(PlayEvents.PLAYER_SHOT, (e)=>{
             this._playerBullet++
@@ -136,12 +137,15 @@ class StageScene extends egret.Sprite{
         // enemy.shot()   
     }
 
-    private initUI(){                        
-        let cp = new ControlPanel(this._stage);
-        cp.y = this._stage.stageHeight - cp.height;
-        this.addChild(cp);
-        this._controlPanel = cp;
-
+    private initUI(){        
+        if(egret.Capabilities.os.indexOf("Windows")<0){
+            let cp = new ControlPanel(this._stage);
+            cp.y = this._stage.stageHeight - cp.height;
+            this.addChild(cp);
+            this._controlPanel = cp;
+            this._playerController.setPanel(cp);
+        }
+       
         let dg = new DashGauge();
         dg.setDashTime(3);
         dg.x = this._stage.stageWidth-200;
@@ -153,7 +157,7 @@ class StageScene extends egret.Sprite{
 
     /**开启漂流物生成timer */
     private createDrift(){
-        this._driftTimer = new egret.Timer(20000);
+        this._driftTimer = new egret.Timer(2000);
         this._driftTimer.addEventListener(egret.TimerEvent.TIMER, this.onDriftTimer, this)  
         this._driftTimer.start();
     }
@@ -161,10 +165,12 @@ class StageScene extends egret.Sprite{
         if(Math.random()<this._buffRate || this._drift) {
             return;
         }
+        if(this._driftTimer.currentCount%10 != 0){
+            return;
+        }
         this._drift = new Drift();        
         this.addChildAt(this._drift, 1);
     }
-
 
     private refreshStage(e:any){
         //自机操作的刷新
@@ -200,6 +206,7 @@ class StageScene extends egret.Sprite{
                         console.log('enemy hit.');
                         this._enemyHit ++;
                         e.hit();
+                        e.setBuff(BuffType.INVINSIBLE, 1000)
                         b.dispose()
                         hasChecked = true
                         if(e.isDefeated()) {
@@ -232,6 +239,7 @@ class StageScene extends egret.Sprite{
                         console.log("player hit");
                         this._playerHit ++;
                         this._player.hit();
+                        this._player.setBuff(BuffType.INVINSIBLE, 1000)
                         b.dispose();
                         hasChecked = true
                         if(this._player.isDefeated()){
@@ -346,5 +354,26 @@ class StageScene extends egret.Sprite{
         this.addChild(gr);  
     }    
 
+
+    private onPause(){
+        this._driftTimer && this._driftTimer.stop();
+        this._player && this._player.onPause();
+        for(let e of this._enemy){
+            e.onPause();
+        }
+    }
+
+    private onResume(){
+        this._driftTimer && this._driftTimer.start();
+        this._player && this._player.onResume();
+        for(let e of this._enemy){
+            e.onResume();
+        }
+    }
+
+    public dispose(){
+        this.cleanStage();
+        LifecycleCallback.removeFunc('StageScene')
+    }
 
 }

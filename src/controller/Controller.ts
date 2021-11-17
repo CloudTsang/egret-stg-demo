@@ -18,7 +18,10 @@ class Controller {
 	}	
 
 	public setPanel(cp:ControlPanel){
-		this._panel = cp;
+		cp.onDirectChange = (x,y)=>{this.setDirect(x,y)};
+		cp.onKeyDown = (e)=>{this.onKeyDown(e)};
+		cp.onKeyUp = (e)=>{this.onKeyUp(e)};
+		this._panel = cp;		
 	}
 
 	public setControllee(p:BasePlane){
@@ -38,12 +41,12 @@ class Controller {
 		}		
 	}
 
-	private onKeyDown(e:any){		
+	private onKeyDown(e:any){	
 		if(this._lock){
 			return;
 		}				
 		switch(e.keyCode){
-			case Keyboard.Z: //设计
+			case Keyboard.Z: //射击
 				this._shotTriggered = true;
 				break;
 			case Keyboard.X: //冲刺

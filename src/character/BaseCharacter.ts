@@ -9,8 +9,7 @@ class BaseCharacter extends CollisionObject{
 	}
 
 	public hit(){		
-		this.HP --;
-		// console.log(this.HP)
+		this.HP --;		
 	}
 
 	public isDefeated(){

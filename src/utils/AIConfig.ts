@@ -36,8 +36,8 @@ class AIConfig {
 	private _timer:egret.Timer;
 	public constructor(me:BasePlane, params:any=null) {
 		this._me = me
-		this._timer = new egret.Timer(this._decisionDuration);
-		this._timer.addEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
+		// this._timer = new egret.Timer(this._decisionDuration);
+		// this._timer.addEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
 	}
 
 	public checkIfPositive(){

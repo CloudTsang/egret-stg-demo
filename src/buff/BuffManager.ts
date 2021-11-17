@@ -112,4 +112,25 @@ class BuffManager {
         this.invinsibleBuff && this.invinsibleBuff.delBuff()
         this.subPlaneBuff && this.subPlaneBuff.delBuff()
     }
+
+    public onPause(){
+        this.bigBulletBuff && this.bigBulletBuff.onPause()
+        this.dashInvinsibleBuff && this.dashInvinsibleBuff.onPause()
+        this.direction3BulletBuff && this.direction3BulletBuff.onPause()
+        this.direction5BulletBuff && this.direction5BulletBuff.onPause()
+        this.directionPlus2BullectBuff && this.directionPlus2BullectBuff.onPause()
+        this.invinsibleBuff && this.invinsibleBuff.onPause()
+        this.subPlaneBuff && this.subPlaneBuff.onPause()       
+    }
+
+
+    public onResume(){        
+        this.bigBulletBuff && this.bigBulletBuff.onResume()
+        this.dashInvinsibleBuff && this.dashInvinsibleBuff.onResume()
+        this.direction3BulletBuff && this.direction3BulletBuff.onResume()
+        this.direction5BulletBuff && this.direction5BulletBuff.onResume()
+        this.directionPlus2BullectBuff && this.directionPlus2BullectBuff.onResume()
+        this.invinsibleBuff && this.invinsibleBuff.onResume()
+        this.subPlaneBuff && this.subPlaneBuff.onResume()     
+    }
 }

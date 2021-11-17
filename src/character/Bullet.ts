@@ -8,6 +8,7 @@ class Bullet extends CollisionObject implements IPoolObject{
 	private _stage = egret.MainContext.instance.stage;
 	protected _sp:egret.DisplayObject;
 	protected _blastBmp:egret.Bitmap;
+	protected _blastPartical:particle.GravityParticleSystem
 
 	protected collisionPoints:egret.Point[]
 	public activate:boolean = false;	
@@ -19,7 +20,9 @@ class Bullet extends CollisionObject implements IPoolObject{
 		this.directY = dy;
 		this.speed = spd;
 		this.draw();		
-		this.drawBlast();	
+		// this.drawBlast();	
+		this.loadPartical();
+		
 	}
 
 	public setDirection(dx=0, dy=-1){
@@ -30,7 +33,8 @@ class Bullet extends CollisionObject implements IPoolObject{
 	public shoot(){		
 		this.activate = true;
 		this._sp.visible = true;
-		this._blastBmp.visible = false;
+		if(this._blastBmp)this._blastBmp.visible = false;
+		if(this._blastPartical)this._blastPartical.visible = false;
 	}
 	public onFly(e:any = null){		
 		this.x += this.directX*this.speed;
@@ -75,15 +79,23 @@ class Bullet extends CollisionObject implements IPoolObject{
 		bmp.height = this.size*4;
 		bmp.x = -this.size*2;
 		bmp.y = -this.size*2;
-		this.addChild(bmp);
+		this.addChild(bmp);		
 		this._blastBmp = bmp;		
 		this._blastBmp.visible = false;
 	}
 
-	protected blast(){
-		this.activate = false;
+	private loadPartical(){
+		this._blastPartical = new particle.GravityParticleSystem(RES.getRes('ballParticle_png'), RES.getRes('blast_json'));	
+		this.addChild(this._blastPartical);	
+	}
+
+	protected blast(){		
 		this._sp.visible = false;
-		this._blastBmp.visible = true;
+		if(this._blastBmp)this._blastBmp.visible = true;
+		if(this._blastPartical){
+			this._blastPartical.visible = true;
+			this._blastPartical.start();
+		}
 	}
 
 	public refreshPosition(){

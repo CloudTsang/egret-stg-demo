@@ -15,9 +15,23 @@ class Buff extends egret.EventDispatcher{
 		this.duration = duration
 		this.label = label
 		if(duration > 0){
-			this.timer = new egret.Timer(this.duration, 1);
+			this.timer = new egret.Timer(this.duration/100, 100);
 			this.timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, this.delBuff, this)
 		}				
+	}
+
+	public onPause(){
+		if(!this.timer){
+			return;
+		}
+		this.timer.stop();
+	}
+
+	public onResume(){
+		if(!this.timer){
+			return;
+		}
+		this.timer.start();
 	}
 
 	public delBuff(e:any=null){
