@@ -60,7 +60,7 @@ class Drift extends BaseCharacter{
 
 	private draw(){
 		let bmp = new egret.Bitmap();		
-		bmp.texture = RES.getRes('drift_png');
+		bmp.texture = RES.getRes('sheet_json#drift');
 		bmp.width = 80;
 		bmp.height = 80;
 		bmp.x = 0;
@@ -84,7 +84,7 @@ class Drift extends BaseCharacter{
 			return;
 		}
 		let bmp = new egret.Bitmap();
-		bmp.texture = RES.getRes('buff_png');
+		bmp.texture = RES.getRes('sheet_json#buff');
 		bmp.width = 100;
 		bmp.height = 100;
 		bmp.x = 0;

@@ -104,7 +104,8 @@ class Main extends eui.UILayer {
         // let dispScene = new DisplayScene(this.stage);
         // this.stage.addChild(dispScene)
         LifecycleCallback.regist()
-        this.toTitle()    
+        this.toTitle()   
+        // this.toStage() 
 
     }
 

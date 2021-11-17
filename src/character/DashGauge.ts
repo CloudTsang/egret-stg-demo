@@ -22,7 +22,7 @@ class DashGauge extends egret.Sprite{
 	private drawIcon(){
 		const scale = 0.5
 		let icon = new egret.Bitmap()		
-		let tex = RES.getRes("jet_png")
+		let tex = RES.getRes("sheet_json#jet")
 		icon.texture = tex		
 		icon.width *= 0.5
 		icon.height *= 0.5

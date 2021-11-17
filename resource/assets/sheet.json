@@ -1,0 +1,13 @@
+{"file":"sheet.png","frames":{
+"plane4":{"x":5,"y":595,"w":570,"h":570,"offX":30,"offY":30,"sourceW":630,"sourceH":630},
+"buff":{"x":595,"y":915,"w":240,"h":240,"offX":0,"offY":0,"sourceW":240,"sourceH":240},
+"plane2":{"x":595,"y":505,"w":345,"h":390,"offX":0,"offY":0,"sourceW":360,"sourceH":405},
+"drift":{"x":5,"y":1625,"w":180,"h":195,"offX":0,"offY":0,"sourceW":180,"sourceH":195},
+"plane1":{"x":595,"y":5,"w":405,"h":480,"offX":0,"offY":15,"sourceW":405,"sourceH":510},
+"btnjet":{"x":205,"y":1780,"w":165,"h":105,"offX":0,"offY":0,"sourceW":165,"sourceH":105},
+"plane3":{"x":5,"y":5,"w":570,"h":570,"offX":30,"offY":30,"sourceW":630,"sourceH":630},
+"bulletblast":{"x":205,"y":1625,"w":135,"h":135,"offX":0,"offY":0,"sourceW":135,"sourceH":135},
+"btn_bullet":{"x":885,"y":915,"w":90,"h":255,"offX":0,"offY":0,"sourceW":90,"sourceH":255},
+"bullet-2":{"x":5,"y":1185,"w":420,"h":420,"offX":0,"offY":0,"sourceW":420,"sourceH":420},
+"bullet":{"x":445,"y":1185,"w":420,"h":420,"offX":0,"offY":0,"sourceW":420,"sourceH":420},
+"jet":{"x":5,"y":1840,"w":180,"h":135,"offX":15,"offY":15,"sourceW":210,"sourceH":165}}}

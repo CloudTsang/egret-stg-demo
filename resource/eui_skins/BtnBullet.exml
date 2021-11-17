@@ -4,5 +4,5 @@
     >
 	<e:Rect width="200" height="200" x="0" y="1" ellipseWidth="200" ellipseHeight="200" fillAlpha="0.3" includeIn="up" fillColor="0xAEABAB"/>
 	<e:Rect width="200" height="200" x="0" y="1" ellipseWidth="200" ellipseHeight="200" fillAlpha="0.8" includeIn="down" fillColor="0x515050"/>
-	<e:Image width="74" height="175" x="62" y="11" source="btn_bullet_png" includeIn="up,down"/>
+	<e:Image width="74" height="175" x="62" y="11" includeIn="up,down" source="sheet_json#btn_bullet"/>
 </e:Skin>

@@ -30,7 +30,7 @@ class SubPlane extends BasePlane {
 
     protected draw(){
         let bmp = new egret.Bitmap();		
-		bmp.texture = RES.getRes('plane2_png');
+		bmp.texture = RES.getRes('sheet_json#plane2');
 		bmp.width = this.pWidth*4;
 		bmp.height = this.pHeight*4;
 		bmp.x = -this.pWidth*2;

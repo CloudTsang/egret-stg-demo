@@ -74,7 +74,7 @@ class Bullet extends CollisionObject implements IPoolObject{
 
 	private drawBlast(){
 		let bmp = new egret.Bitmap();		
-		bmp.texture = RES.getRes('bulletblast_png');
+		bmp.texture = RES.getRes('sheet_json#bulletblast');
 		bmp.width = this.size*4;
 		bmp.height = this.size*4;
 		bmp.x = -this.size*2;
@@ -85,7 +85,7 @@ class Bullet extends CollisionObject implements IPoolObject{
 	}
 
 	private loadPartical(){
-		this._blastPartical = new particle.GravityParticleSystem(RES.getRes('ballParticle_png'), RES.getRes('blast_json'));	
+		this._blastPartical = new particle.GravityParticleSystem(RES.getRes('blast_png'), RES.getRes('blast_json'));	
 		this.addChild(this._blastPartical);	
 	}
 

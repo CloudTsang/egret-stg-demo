@@ -15,13 +15,13 @@ class LifecycleCallback{
         delete LifecycleCallback.map[key]
     }
 
-    private static onPause(){
+    private static onPause(){       
         for(let i in LifecycleCallback.map){
             LifecycleCallback.map[i].onPause();
         }
     }
 
-    private static onResume(){
+    private static onResume(){       
         for(let i in LifecycleCallback.map){
             LifecycleCallback.map[i].onResume();
         }

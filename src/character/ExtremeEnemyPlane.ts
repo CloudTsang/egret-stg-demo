@@ -16,7 +16,7 @@ class ExtremeEnemyPlane extends EnemyPlane {
 
 	protected draw(){
 		let bmp = new egret.Bitmap();		
-		bmp.texture = RES.getRes('plane3_png');
+		bmp.texture = RES.getRes('sheet_json#plane3');
 		bmp.width = this.pWidth*4;
 		bmp.height = this.pHeight*4;
 		bmp.x = -this.pWidth*2;

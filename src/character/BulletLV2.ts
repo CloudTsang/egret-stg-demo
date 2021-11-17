@@ -6,7 +6,7 @@ class BulletLV2 extends Bullet{
 
 	protected draw(){
 		let bmp = new egret.Bitmap();		
-		bmp.texture = RES.getRes('bullet_png');
+		bmp.texture = RES.getRes('sheet_json#bullet');
 		bmp.width = this.size*2;
 		bmp.height = this.size*2;
 		bmp.x = -this.size

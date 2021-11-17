@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,jet_png,bullet_png,plane1_png,plane2_png,plane3_png,plane4_png,drift_png,buff_png,bg2_png,bulletblast_png,elite_mp3,extreme_mp3,normal_mp3,title_mp3,btn_bullet_png,btnjet_png,bullet-2_png,ballParticle_png,blast_png,blast_json",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,bg2_png,elite_mp3,extreme_mp3,normal_mp3,title_mp3,blast_png,blast_json,sheet_json",
 			"name": "preload"
 		}
 	],
@@ -127,54 +127,9 @@
 			"url": "config/description.json"
 		},
 		{
-			"name": "jet_png",
-			"type": "image",
-			"url": "assets/jet.png"
-		},
-		{
-			"name": "bullet_png",
-			"type": "image",
-			"url": "assets/bullet.png"
-		},
-		{
-			"name": "plane1_png",
-			"type": "image",
-			"url": "assets/plane1.png"
-		},
-		{
-			"name": "plane2_png",
-			"type": "image",
-			"url": "assets/plane2.png"
-		},
-		{
-			"name": "plane3_png",
-			"type": "image",
-			"url": "assets/plane3.png"
-		},
-		{
-			"name": "plane4_png",
-			"type": "image",
-			"url": "assets/plane4.png"
-		},
-		{
-			"name": "drift_png",
-			"type": "image",
-			"url": "assets/drift.png"
-		},
-		{
-			"name": "buff_png",
-			"type": "image",
-			"url": "assets/buff.png"
-		},
-		{
 			"name": "bg2_png",
 			"type": "image",
 			"url": "assets/bg2.png"
-		},
-		{
-			"name": "bulletblast_png",
-			"type": "image",
-			"url": "assets/bulletblast.png"
 		},
 		{
 			"name": "elite_mp3",
@@ -197,26 +152,6 @@
 			"url": "assets/title.mp3"
 		},
 		{
-			"name": "btn_bullet_png",
-			"type": "image",
-			"url": "assets/btn_bullet.png"
-		},
-		{
-			"name": "btnjet_png",
-			"type": "image",
-			"url": "assets/btnjet.png"
-		},
-		{
-			"name": "bullet-2_png",
-			"type": "image",
-			"url": "assets/bullet-2.png"
-		},
-		{
-			"name": "ballParticle_png",
-			"type": "image",
-			"url": "assets/ballParticle.png"
-		},
-		{
 			"name": "blast_png",
 			"type": "image",
 			"url": "assets/blast.png"
@@ -225,6 +160,12 @@
 			"name": "blast_json",
 			"type": "json",
 			"url": "assets/blast.json"
+		},
+		{
+			"name": "sheet_json",
+			"type": "sheet",
+			"url": "assets/sheet.json",
+			"subkeys": "btn_bullet,btnjet,buff,bullet,bullet-2,bulletblast,drift,jet,plane1,plane2,plane3,plane4"
 		}
 	]
 }
